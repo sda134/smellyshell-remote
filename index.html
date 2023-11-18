@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head> 
+  <body>  
+    <div id="my_chart"><!-- ここにグラフを表示する --></div>
+    <script>
+      setInterval(()=>{ fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+          // Plotlyでグラフを描画
+          var data = [{
+            values: data.values,
+            labels: data.labels,
+            type: 'pie'
+          }];    
+          Plotly.newPlot('my_chart', data);
+        });
+      }, 1000);
+    </script>
+  </body>
+</html>
