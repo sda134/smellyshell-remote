@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <meta charset="UTF-8">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head> 
-  <body>  
+  <body>
+    <h5>グラフ表示テスト</h5>
     <div id="my_chart"><!-- ここにグラフを表示する --></div>
     <script>
-      setInterval(()=>{ fetch('data.json')
+      setInterval(()=>{ fetch('https://s3.ap-northeast-1.amazonaws.com/example208076554333.com/data.json')
         .then(response => response.json())
         .then(data => {
           // Plotlyでグラフを描画
